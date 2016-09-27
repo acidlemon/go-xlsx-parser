@@ -4,9 +4,9 @@ SAX like streaming xlsx parser
 ## SYNOPSIS
 
 ```golang
-	doc := xlsx.Open("your.xlsx")
-	parser := &MyParser{}
-	doc.ParseSheet("Sheet 1", parser)
+doc := xlsx.Open("your.xlsx")
+parser := &MyParser{}
+doc.ParseSheet("Sheet 1", parser)
 ```
 
 ```golang
