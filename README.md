@@ -3,13 +3,13 @@ SAX like streaming xlsx parser
 
 ## SYNOPSIS
 
-```golang
+```go
 doc := xlsx.Open("your.xlsx")
 parser := &MyParser{}
 doc.ParseSheet("Sheet 1", parser)
 ```
 
-```golang
+```go
 type MyParser struct{}
 func (p *MyParser) ReadLine(rowCount int, columns []interface{}) {
      // write your parser here!
@@ -18,7 +18,7 @@ func (p *MyParser) ReadLine(rowCount int, columns []interface{}) {
 
 ### Example
 
-```golang
+```go
 package main
 
 import (
