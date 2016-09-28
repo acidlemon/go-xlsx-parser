@@ -8,10 +8,10 @@ func Open(path string) *Document {
 
 // SheetHandler will receive string / int64 / float64 / time.Time
 type SheetHandler interface {
-	ReadLine(rowCount int, columns []interface{})
+	ReadRow(rowCount int, columns []interface{})
 }
 
 //type CSVWriter struct{}
-//func (w *CSVWriter) ReadLine(int, columns []interface{}) {
+//func (w *CSVWriter) ReadRow(int, columns []interface{}) {
 //
 //}

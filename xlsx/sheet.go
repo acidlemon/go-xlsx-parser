@@ -120,7 +120,7 @@ func (s *Sheet) Parse(handler SheetHandler) {
 			case "row":
 				if inSheetData {
 					rowCount++
-					handler.ReadLine(rowCount, currentRows)
+					handler.ReadRow(rowCount, currentRows)
 				}
 			case "c":
 				cells := parseRel(*c)

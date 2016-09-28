@@ -30,7 +30,7 @@ type TestParser struct {
 	maxRowCount int
 }
 
-func (test *TestParser) ReadLine(rowCount int, data []interface{}) {
+func (test *TestParser) ReadRow(rowCount int, data []interface{}) {
 	test.maxRowCount = rowCount
 	rowIndex := rowCount - 1
 	columnIndex := 0

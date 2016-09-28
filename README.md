@@ -11,7 +11,7 @@ doc.ParseSheet("Sheet 1", parser)
 
 ```go
 type MyParser struct{}
-func (p *MyParser) ReadLine(rowCount int, columns []interface{}) {
+func (p *MyParser) ReadRow(rowCount int, columns []interface{}) {
      // write your parser here!
 }
 ```
@@ -39,7 +39,7 @@ func main() {
 type MyParser struct{}
 
 // see xlsx/parser.go
-func (p *MyParser) ReadLine(rowCount int, columns []interface{}) {
+func (p *MyParser) ReadRow(rowCount int, columns []interface{}) {
 	fmt.Printf("Line %d:\n", rowCount)
 	data := []string{}
 	for _, value := range columns {
