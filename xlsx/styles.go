@@ -212,8 +212,10 @@ func NewStyles(f *zip.File) *Styles {
 			case "numFmts":
 				inNumFmts = false
 			case "xf":
-				cellStyles = append(cellStyles, c)
-				c = cellXf{}
+				if inCellXfs {
+					cellStyles = append(cellStyles, c)
+					c = cellXf{}
+				}
 			case "numFmt":
 				numFmts[numFmtId] = numfmt
 				numfmt = format{}
