@@ -243,7 +243,7 @@ func nextColumn(last string) string {
 
 func convertSerialTime(serial float64) time.Time {
 	fromUnixEpoch := (serial - 25569) * 24 * 60 * 60
-	return time.Unix(int64(fromUnixEpoch), 0).In(time.Local)
+	return time.Unix(int64(math.Round(fromUnixEpoch)), 0).In(time.Local)
 }
 
 func convertIfLikeNumber(str string) interface{} {
