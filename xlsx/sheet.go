@@ -108,6 +108,9 @@ func (s *Sheet) Parse(handler SheetHandler) {
 					RefOriginal: ref,
 					Column:      len(currentRows) + 1,
 				}
+				if c.Type == "inlineStr" {
+					inValue = true
+				}
 
 			case "v":
 				inValue = true
@@ -158,9 +161,12 @@ func (s *Sheet) Parse(handler SheetHandler) {
 				}
 
 				currentRows = append(currentRows, c.Value)
-
+				if c.Type == "inlineStr" {
+					inValue = false
+				}
 				data = ""
 				c = nil
+				
 			case "v":
 				inValue = false
 			}
