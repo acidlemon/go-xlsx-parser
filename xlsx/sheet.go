@@ -161,12 +161,12 @@ func (s *Sheet) Parse(handler SheetHandler) {
 				}
 
 				currentRows = append(currentRows, c.Value)
-
-				data = ""
-				c = nil
 				if c.Type == "inlineStr" {
 					inValue = false
 				}
+				data = ""
+				c = nil
+				
 			case "v":
 				inValue = false
 			}
